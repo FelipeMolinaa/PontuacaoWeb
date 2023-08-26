@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin.component';
 import { LoginComponent } from './login/login.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -10,7 +13,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
+    imports: [RouterModule.forChild(routes), InputTextModule, CardModule, ButtonModule],
     exports: [RouterModule],
     declarations: [AdminComponent, LoginComponent],
 })
