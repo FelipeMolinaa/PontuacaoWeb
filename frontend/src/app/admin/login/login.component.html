@@ -1,15 +1,15 @@
 <div class="h-screen flex justify-center items-center">
     <p-card header="Entrar" class="w-auto">
-        <form>
+        <form #loginForm="ngForm" (ngSubmit)="onLoginFormSubmit(loginForm)">
             <div class="p-inputgroup">
                 <span class="p-inputgroup-addon">
                     <i class="bi bi-person-fill"></i>
                 </span>
-                <input pInputText placeholder="Nome" />
+                <input pInputText placeholder="Nome" name="nome" required ngModel #nome="ngModel" />
             </div>
             <div class="p-inputgroup mt-3">
-                <input pInputText type="password" placeholder="Senha" />
-                <button type="button" pButton label="Search" class="bg-primary"></button>
+                <input pInputText type="password" placeholder="Senha" name="senha" ngModel #senha="ngModel" required />
+                <button type="submit" pButton label="Search" class="bg-primary"></button>
             </div>
         </form>
     </p-card>
